@@ -36,6 +36,7 @@ This dataset comprises 2520 images categorized into three classes: paper, rock, 
 
 ## VGG-19
 VGG-19 (Visual Geometry Group 19) is a convolutional neural network (CNN) architecture that belongs to the VGG family of models. It was introduced by the Visual Geometry Group at the University of Oxford and has gained popularity for its simplicity and effectiveness in image classification tasks.
+<img src="img/vgg19.png" width="900"/>
 
 ## Pre Processing & Modelling
 * Splitting Dataset
