@@ -50,6 +50,8 @@ VGG-19 (Visual Geometry Group 19) is a convolutional neural network (CNN) archit
   Datagen_Test = ImageDataGenerator(rescale=1./255,)
 
 * Graph Loss & Accuracy
+  
+  <img src="img/grph.png" width="488"/>
 * Classification Report
 
 ## AI Web Deployment
