@@ -1,1 +1,2 @@
-# RPS-AI-Web-Deployment_329
+# Rock,Papper,Scissors Prediction
+Project ini adalah untuk prediksi citra Rock,Papper,Scissors
