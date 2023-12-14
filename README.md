@@ -24,6 +24,8 @@ This dataset comprises 2520 images categorized into three classes: paper, rock, 
 
 [**Access Dataset Here !**](https://drive.google.com/file/d/1u_iS39-nPsJMmp5ZS1X4_nrzUvFeEYaw/view?usp=sharing)
 
+<img src="img/dtst.png" width="1000"/>
+
 ## Requierments
 * Python 3
 * Flask
@@ -50,13 +52,18 @@ VGG-19 (Visual Geometry Group 19) is a convolutional neural network (CNN) archit
   Datagen_Test = ImageDataGenerator(rescale=1./255,)
 
 * Graph Loss & Accuracy
-  
-  <img src="img/grph.png" width="1488" height="488"/>
+  <img src="img/grph.png" width="1000"/>
 * Classification Report
+  <img src="img/cr.png" width="900"/>
 
 ## AI Web Deployment
 * Main Page
+  
+  <img src="img/hp1.png" width="700"/>
+  <img src="img/hp2.png" width="700"/>
 * Result Page
+
+  <img src="img/pr.png" width="700"/>
 
 ## Author
 * **Ananda Allif Agita** ***([@anandaallif](https://github.com/anandaallif))***
