@@ -1,0 +1,159 @@
+<!-- form-section -->
+<body style="background-color: #F4F4F4; font-family: 'Arial', sans-serif;">
+
+    <section class="contact-section" style="padding: 50px 0; display: flex; justify-content: center; align-items: center; min-height: 100vh;" id="predict1">
+        <div class="container" style="background-color: #FFFFFF; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+            <div class="title-box">
+                <div class="sec-title" style="color: #1C1C1C;">
+                    <h1 style="font-size: 24px; margin-bottom: 15px;">Rock, Paper, & Scissors Image Prediction</h1>
+                </div>
+            </div>
+            <form class="login100-form validate-form" action="/predict" method="post" enctype="multipart/form-data">
+                <div class="image-preview-container">
+                    <img id="image-preview" alt="image preview" src="../static/initial.png" class="image-preview" style="width: 100%; max-width: 400px; border-radius: 8px; margin-bottom: 20px;">
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Image file is required" id="input" style="background-color: #F0F0F0; text-align: center; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                    <label for="image-source" class="input-label" style="font-weight: bold; color: #333333; font-size: 16px; margin-bottom: 15px;">
+                        Choose an Image:
+                        <i class="fa fa-file" aria-hidden="true" style="margin-left: 5px;"></i>
+                    </label>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <div class="alert alert-danger" style="padding-bottom: 5px; color: #FF4848; font-size: 14px;">
+                            {% for message in messages %}
+                                <div>{{ message }}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    {% endwith %}
+                    <div class="file-input-wrapper" style="height: 100px; display: flex; align-items: center; justify-content: center;">
+                        <input class="input100" id="image-source" name="file" onchange="previewImage();" type="file" accept="image/jpeg,image/jpg,image/png" style="display: none;">
+                        <label for="image-source" class="file-input-label" style="cursor: pointer; font-size: 14px; color: #4CAF50;">
+                            <i class="fa fa-cloud-upload" aria-hidden="true" style="margin-right: 5px;"></i> Choose File
+                        </label>
+                        <span class="focus-input100" style="background-color: #333333;"></span>
+                    </div>
+                </div>
+                <div class="container-login100-form-btn" style="text-align: center;">
+                    <button class="login100-form-btn" type="submit" style="background-color: #4CAF50; color: #FFFFFF; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer;">
+                        Predict
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+<!-- form-section end -->
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    .container {
+        width: 60%;
+        text-align: center;
+    }
+
+    .title-box {
+        margin-bottom: 20px;
+    }
+
+    .sec-title {
+        text-align: center;
+    }
+
+    .image-preview-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .image-preview {
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid #FFFFFF;
+        border-radius: 8px;
+    }
+
+    .input-label {
+        display: block;
+        font-weight: bold;
+    }
+
+    .wrap-input100 {
+        position: relative;
+        padding: 20px;
+    }
+
+    .file-input-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .input100 {
+        font-size: 16px;
+        padding: 10px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .file-input-label {
+        display: inline-block;
+        background-color: #fff;
+        padding: 20px;
+        border: 2px solid #4CAF50;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .file-input-label:hover {
+        background-color: #f0f0f0;
+    }
+
+    .focus-input100::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 20px);
+        height: 2px;
+        background: #333333;
+        transition: 0.4s;
+        display: inline-block;
+    }
+
+    .container-login100-form-btn {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .login100-form-btn {
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    function previewImage() {
+        var preview = document.getElementById('image-preview');
+        var fileInput = document.getElementById('image-source');
+        var file = fileInput.files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+    }
+</script>

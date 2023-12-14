@@ -1,0 +1,73 @@
+<!-- Table-section -->
+<body style="background-color: #F4F4F4; font-family: 'Arial', sans-serif;">
+
+    <section class="contact-section" id="result" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+        <div class="container" style="background-color: #FFFFFF; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+            <div class="title-box centred">
+                <div class="sec-title" style="color: #1C1C1C; text-align: center;">
+                    <h1 style="font-size: 24px; margin-bottom: 15px;">Prediction Result</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12 content-column">
+                    <div class="inner-content">
+                        <div class="contact-form-area">
+                            <p style="color: #1C1C1C; text-transform: capitalize; font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 10px;">Prediction: {{ labels[pred] }}</p>
+                            <p style="color: #4CAF50; font-size: 16px; text-align: center; margin-bottom: 10px;">Accuracy: {{ (probs|max) }}%</p>
+                            <p style="color: #4CAF50; font-size: 16px; text-align: center;">Prediction Time: {{ (run_time) }} seconds</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 sidebar-column">
+                    <div class="sidebar-content">
+                        <img src="{{ url_for('static', filename=img) }}" alt="Input Image" class="img-fluid result-image" style="width: 100%; max-width: 300px; border-radius: 8px; margin-top: 20px;">
+                        <form action="/">
+                            <button class="login100-form-btn" type="submit" style="background-color: #4CAF50; color: #FFFFFF; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; display: block; margin: 20px auto;">
+                                Go Back
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<!-- final-section end -->
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    .container {
+        width: 60%;
+        text-align: center;
+    }
+
+    .title-box {
+        margin-bottom: 20px;
+    }
+
+    .sec-title {
+        text-align: center;
+    }
+
+    .result-image {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+
+    .login100-form-btn {
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto;
+    }
+</style>
